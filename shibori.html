@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="input-text">
+    
+   <!-- <ul id="list">
+        <li data-filter="Apple">アップル</li>
+        <li data-filter="Banana">バナナ</li>
+        <li data-filter="Cherry">チェリー</li>
+        <li data-filter="Durian">ドリアン</li>
+        <li data-filter="Grape">グレープ</li>
+</ul>-->
+
+
+    <label><input type="checkbox" name="color" value="red" >赤</label>
+    <label><input type="checkbox" name="color" value="blue">青</label>
+    <label><input type="checkbox" name="color" value="green">緑</label>
+
+    <label><input type="checkbox" name="sizefirst" value="small">Sサイズ</label>
+    <label><input type="checkbox" name="sizesecond" value="medium">Mサイズ</label>
+    <label><input type="checkbox" name="sizethird" value="large">Lサイズ</label>
+
+    <ul id="list">
+        <li class="item" data-color="blue" data-sizesecond="medium" data-sizethird="large" data-filter="りんご">Item 1</li>
+        <li class="item" data-color="red" data-size="large" data-filter="">Item 2</li>
+        <li class="item" data-color="blue" data-size="small" data-filter="">Item 3</li>
+        <li class="item" data-color="green" data-size="medium" data-filter="">Item 4</li>
+    </ul>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="shibori.js"></script>
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hiyarikensaku.css">
+    <title>ヒヤリハット検索システム</title>
+</head>
+<body>
+    <h1>ヒヤリハットカード（おサ推課提出分）</h1>
+    <details>
+        <summary>絞り込み検索フォームを開く</summary>
+        <table align="center">
+            <tr>
+                <th class="date">発生日</th>
+                <td class="dateed">
+                    <select name="date" id="date" class="date">
+                     <input type="date" min="2021-04-01" max="2022-03-31">
+                        <!--<option value="0">選択しない</option>
+                        <option value="1">2022年1月</option>
+                        <option value="2">2022年2月</option>
+                        <option value="3">2022年3月</option>-->
+                    </select>
+                    〜
+                    <select name="date" id="date" class="date">
+                        <input type="date" min="2021-01-01" max="2022-03-31">
+                    <!--	<option value="0">選択しない</option>
+                        <option value="1">2022年1月</option>
+                        <option value="2">2022年2月</option>
+                        <option value="3">2022年3月</option>-->
+                    </select>              
+                </td>
+            </tr>
+            <tr>
+                <th class="imagenation">想定事例の時はチェック</th>
+                    <td class="imagenation">
+                        <div class="c-selector js-filter-box">
+                            <label>
+                                <input type="checkbox" name="imagenation" value="imagenation">
+                                想定事例
+                            </label>
+                        </div>
+                    </td>
+            </tr>
+            <tr>
+                <th class="time">時間</th>
+                <td class="timeed">
+                    <select name="time" id="time" class="time">
+                     <!--<p><input type="month" name="example" min="2022-01" max="2023-3"></p>-->   
+                        <option value="0">選択しない</option>
+                        <option value="1">1時</option>
+                        <option value="2">2時</option>
+                        <option value="3">3時</option>
+                    <select/>
+                    〜
+                    <select name="date" id="date" class="date">
+                        <!--<p><input type="month" name="example" min="2022-01" max="2023-3"></p>-->
+                        <option value="0">選択しない</option>
+                        <option value="1">1時</option>
+                        <option value="2">2時</option>
+                        <option value="3">3時</option>
+                    </select>                            
+                </td>
+            </tr>
+            <tr>
+                <th class="dayweek">曜日</th>
+                <td class="dayweekselected">
+                    <!--<div class="c-selector js-filter-box">-->
+                        <label>
+                            <input type="checkbox" name="dayweek" value="monday">
+                            月曜日
+                        </label>
+                        <label>
+                            <input type="checkbox" name="dayweek" value="tuesday">
+                            火曜日
+                        </label>
+                        <label>
+                            <input type="checkbox" name="dayweek" value="wednesday">
+                            水曜日
+                        </label>
+                        <label>
+                            <input type="checkbox" name="dayweek" value="thursday">
+                            木曜日
+                        </label>
+                        <label>
+                            <input type="checkbox" name="dayweek" value="friday">
+                            金曜日
+                        </label>         
+                   <!-- </div> --> 
+                </td>
+            </tr>
+            <tr>
+                <th class="human">関係者</th>
+                <td class="humanselected">
+                    <!--<div class="c-selector js-filter-box">-->
+                    <label>
+                        <input type="checkbox" name="human" value="kuin">
+                        課・区員
+                    </label>
+                    <label>
+                        <input type="checkbox" name="human" value="taka">
+                        他課
+                    </label>
+                    <label>
+                        <input type="checkbox" name="human" value="itaku">
+                        委託員
+                    </label>
+                    <label>
+                        <input type="checkbox" name="human" value="ryokaku">
+                        旅客
+                    </label>
+                    <label>
+                        <input type="checkbox" name="human" value="kanneisyaother">
+                        その他
+                    </label>
+                    <!--</div>-->
+                </td>
+            </tr>
+            <tr>
+                <th class="situation">状況</th>
+                <td class="situationselected">
+                    <!--<div class="c-selector js-filter-box">-->
+                        <label>
+                            <input type="checkbox" name="situation" value="normal">
+                            通常時
+                        </label>
+                        <label>
+                            <input type="checkbox" name="situation" value="emergency">
+                            緊急時
+                        </label>
+                    <!--</div>-->
+                </td>
+            </tr>
+            <tr>
+                <th class="age">経験年数</th>
+                <td class="ageselected">
+                    <!--<div class="c-selector js-filter-box">-->
+                        <label>
+                            <input type="checkbox" name="age" value="beginner">
+                            1年未満
+                        </label>
+                        <label>
+                            <input type="checkbox" name="age" value="amateur">
+                            1年〜5年未満
+                        </label>
+                        <label>
+                            <input type="checkbox" name="age" value="topstar">
+                            5年〜10年未満
+                        </label>
+                        <label>
+                            <input type="checkbox" name="age" value="superstar">
+                            10年以上
+                        </label>
+                    <!--</div>-->
+                </td>
+            </tr>
+            <tr>
+                <th class="place">場所</th>
+                <td class="placeselected">
+                    <!--<div class="c-selector js-filter-box">-->
+                        <label>
+                            <input type="checkbox" name="place" value="mainline">
+                            本線・走行路
+                        </label>
+                        <label>
+                            <input type="checkbox" name="place" value="station">
+                            駅構内
+                        </label>
+                        <label>
+                            <input type="checkbox" name="place" value="incar">
+                            車内
+                        </label>
+                        <label>
+                            <input type="checkbox" name="place" value="kichinai">
+                            基地内
+                        </label>
+                        <label>
+                            <input type="checkbox" name="place" value="kensyuutou">
+                            検修棟
+                        </label>
+                        <label>
+                            <input type="checkbox" name="place" value="shireiroom">
+                            指令室
+                        </label>
+                        <div id="sectionfirst">
+                            <label>
+                                <input type="checkbox" name="place" value="electricroom">
+                                電気室・信通室・機械室
+                            </label>
+                            <label>
+                                <input type="checkbox" name="place" value="mainoffice">
+                                本社
+                            </label>
+                            <label>
+                                <input type="checkbox" name="place" value="street">
+                                道路上
+                            </label>
+                        </div>
+                    <!--</div>-->
+                </td>
+            </tr>
+            <tr>
+                <th class="result">結果</th>
+                <td class="resultselected">
+                    <label>
+                        <input type="checkbox" name="resultfirst" value="accident">
+                        事故
+                    </label>
+                    <label>
+                        <input type="checkbox" name="resultsecond" value="late">
+                        遅延
+                    </label>
+                    <label>
+                        <input type="checkbox" name="resultthird" value="break">
+                        故障
+                    </label>
+                    <label>
+                        <input type="checkbox" name="resultforth" value="complaint">
+                        苦情
+                    </label>
+                    <label>
+                        <input type="checkbox" name="resultfifth" value="blackout">
+                        停電
+                    </label>
+                    <label>
+                        <input type="checkbox" name="resultsixth" value="electricshock">
+                        感電
+                    </label>
+                    <div id="sectionsecond">
+                        <label>
+                            <input type="checkbox" name="resultseventh" value="collision">
+                            衝突・接触
+                        </label>
+                        <label>
+                            <input type="checkbox" name="resulteighth" value="tumbling">
+                            転落・転倒
+                        </label>
+                        <label>
+                            <input type="checkbox" name="resultnineth" value="flydrop">
+                            飛来・落下
+                        </label>
+                        <label>
+                            <input type="checkbox" name="resulttenth" value="failure">
+                            誤作動
+                        </label>
+                    </div>
+                    <div id="sectionthird">
+                        <label>
+                            <input type="checkbox" name="resulteleventh" value="strike">
+                            挟む・潰す・ぶつける
+                        </label>
+                        <label>
+                            <input type="checkbox" name="resulttwelveth" value="cut">
+                            刺さる・切る
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <th class="cause">原因</th>
+                <td class="causeselected">
+                    <label>
+                        <input type="checkbox" name="cause" value="misoperation">
+                        誤操作・手順に反する
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cause" value="indefinite">
+                        指示・命令・連絡・報告等不徹底
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cause" value="preoccupied">
+                        他に気をとられる
+                    </label>
+                <div id="sectionforth">
+                    <label>
+                        <input type="checkbox" name="cause" value="experience">
+                        慣れによる
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cause" value="impossiblemove">
+                        無理な動作
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cause" value="lackconfirmation"> 
+                        確認不足
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cause" value="assumption"> 
+                        勝手な思い込み
+                    </label>
+                </div>
+                <div id="sectionfifth">
+                    <label>
+                        <input type="checkbox" name="cause" value="unconscious">
+                        無意識・問題意識の欠如
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cause" value="education"> 
+                        教育・訓練
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cause" value="manualu">
+                        規程・マニュアル
+                    </label>
+                </div>
+                <div id="sectionsixth">
+                    <label>
+                        <input type="checkbox" name="cause" value="environment">
+                        労働条件・作業環境
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cause" value="plan">
+                        作業計画
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cause" value="physicalmental">
+                        身体的状況 心理・精神的状況
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cause" value="deterioration">
+                        劣化
+                    </label>
+                </div>
+                <div id="sectionseventh">
+                    <label>
+                        <input type="checkbox" name="cause" value="deficiency">
+                        配備・構造不備
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cause" value="malfunction">
+                        動作不良
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cause" value="Inspectionfailure">
+                        整備・点検不良
+                    </label>
+                    <label>
+                        <input type="checkbox" name="cause" value="Poorconstruction">
+                        施工・製品不良
+                    </label>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <th>フリーワード検索</th>
+                <td>
+                    <input type="text" id="input-text">
+                    <div id="proviso">※入力すると、概要、原因、対策に記載した文言がヒットします</div>
+                </td>
+            </tr>
+            <tr>
+                <th class="givedayweek">提出年月</th>
+                <td class="givedayweeked">
+                    <select name="givedayweek" id="givedayweek" class="givedayweek">
+                     <input type="month" name="example" min="2021-04" max="2022-3">
+                        <!--<option value="0">選択しない</option>
+                        <option value="1">2022年1月</option>
+                        <option value="2">2022年2月</option>
+                        <option value="3">2022年3月</option>-->
+                     </select>
+                    〜
+                    <select name="givedayweek" id="givedayweek" class="givedayweek">
+                        <input type="month" name="example" min="2021-04" max="2022-03">
+                        <!--<option value="0">選択しない</option>
+                        <option value="1">2022年1月</option>
+                        <option value="2">2022年2月</option>
+                        <option value="3">2022年3月</option>-->
+                    </select>              
+                </td>
+            </tr>
+        <!--<tr>
+                <th class="sectionorganizataion">提出課</th>
+                <td class="sectionorganizataioned">
+                    <label for="osasui">
+                        <input id="osasui" type="checkbox" name="">
+                        お客様サービス推進課
+                    </label>
+                    <label for="sirei">
+                        <input id="sirei" type="checkbox" name="">
+                        運輸課指令区
+                    </label>
+                    <label for="syaryou">
+                        <input id="syaryou" type="checkbox" name="">
+                        車両課
+                    </label>
+                    <label for="shisetsuka">
+                        <input id="shisetsuka" type="checkbox" name="">
+                        施設課
+                    </label>
+                    <label for="denkihoanka">
+                        <input id="denkihoanka" type="checkbox" name="">
+                        電気保安課
+                    </label>
+                </td>
+            </tr>-->
+        </table>
+    </details>		
+    <!--<input type="button" value="検索">-->
+    <p>ヒヤリ・ハット一覧</p>
+    <ul id="list"> 
+        <li class="item" data-dayweek="wednesday" data-human="kuin" data-situation="normal" data-age="amateur" data-place="station" data-resultfirst="accident" data-resultsecond="late" data-cause="" data-filter="情報伝達。確認" data-href="../count/hiyari_hatto/R03-201.pdf">車内点検依頼時、号車番号を伝えたはずが、聞き手側が列車番号だと誤認識</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="station" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-200.pdf">旅客案内時、業務用iPad接続不良</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="street" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-190.pdf">有明駅車庫にて、緊急自動車出庫時、走行中の車と接触しそうになった</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="station" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-189.pdf">有明駅シャッター開前の構内巡回時に、小扉を開けられず、駅務室に戻れなくなる</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="station" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-177.pdf">新橋西口券売機売上金搬送中のキャリーカート誤扱い</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-176.pdf">遺失物引き渡し時、内容物確認失念</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-169.pdf">記念撮影パネルの段差に躓き、旅客転倒未遂</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-168.pdf">駅構内巡回中、ホーム階段にて旅客と接触未遂</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-167.pdf">駅務室を出た後に、鍵の不携帯に気付く</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-166.pdf">テンサバリア収納時、誤取扱い</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-165.pdf">新橋定期券発売所、遺失物収納場所間違い</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-164.pdf">清掃用モップ転倒</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-163.pdf">駅構内巡回中、連絡通路の階段踏み外し</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-162.pdf">駅構内巡回中、旅客と衝突しそうになる</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-160.pdf">窓口にて精算時、ICカード処理連絡票手渡し失念</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-159.pdf">新橋西口階段下倉庫、扉施錠失念</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-158.pdf">10年失効ＩＣカード誤取扱い</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-157.pdf">最終停留時、排煙窓閉失念</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-156.pdf">エスカレーター切替操作遅延</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="incar" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-155.pdf">勾配区間にて再発進時、勾配起動ＳＷ未使用</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-154.pdf">上り終車添乗にて、乗車列車誤案内未遂</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-153.pdf">次亜塩素酸水拭き取り忘れ</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-152.pdf">駅構内巡回中、ホーム階段にて旅客と接触未遂</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-151.pdf">内線電話対応時、氏名と折返し連絡先を聞きそびれる</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-066.pdf">係員引継簿用紙残枚数不足</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-065.pdf">車内清掃を依頼されるも、車内捜索と誤認</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-059.pdf">脚立の取扱い方の誤り</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-058.pdf">シャッターBOX閉め忘れ</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-048.pdf">階段とエスカレータの隙間のゴミを回収しようとしたら、転倒しそうになる</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="incar" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-047.pdf">自動運転切換時、マスコンＥＢ段未投入</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-046.pdf">車椅子、転倒防止ストッパーかけ忘れ</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-028.pdf">ホームドア単独操作盤、開閉信号切替ＳＷ操作せずに、ブレーカーＯＦＦ</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-027.pdf">ＰＡＳＭＯ定期券払戻可能額あるにも関わらず、券面情報消去未遂</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-019.pdf">券売機のユニットカバーに足を引っ掛ける</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-018.pdf">チームラボ違いによる誤案内</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-017.pdf">遺失物引渡しにおける引継時、落とし主の性別誤認</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="incar" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-016.pdf">手動運転にて新橋到着時、過走による02信号点灯</li>
+        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-003.pdf">車椅子旅客ご案内対象誤認</li>
+        </ul> 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="hiyarikensaku.js"></script>
+</body>
+</html>
+
+<!--data-age="amateur" data-place="road"-->
+<!--data-age="biggner" data-place="honnsenn" -->
+<!--ata-age="superstar" data-place="controlroom" -->
