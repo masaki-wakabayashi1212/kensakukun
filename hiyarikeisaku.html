@@ -13,9 +13,9 @@
         <summary>絞り込み検索フォームを開く</summary>
         <table align="center">
             <tr>
-                <th class="date">発生日</th>
-                <td class="dateed">
-                    <select name="date" id="date" class="date">
+                <th class="occurrence">発生日</th>
+                <td class="occurrence">
+                    <select name="occurrencestart" id="occurrencestart" class="occurrencestart">
                      <input type="date" min="2021-04-01" max="2022-03-31">
                         <!--<option value="0">選択しない</option>
                         <option value="1">2022年1月</option>
@@ -23,7 +23,7 @@
                         <option value="3">2022年3月</option>-->
                     </select>
                     〜
-                    <select name="date" id="date" class="date">
+                    <select name="occurrenceend" id="occurrenceend" class="occurrenceend">
                         <input type="date" min="2021-01-01" max="2022-03-31">
                     <!--	<option value="0">選択しない</option>
                         <option value="1">2022年1月</option>
@@ -216,42 +216,46 @@
                         故障
                     </label>
                     <label>
-                        <input type="checkbox" name="resultforth" value="complaint">
+                        <input type="checkbox" name="resultfourth" value="cut">
+                        けが
+                    </label>
+                    <label>
+                        <input type="checkbox" name="resultfifth" value="complaint">
                         苦情
                     </label>
                     <label>
-                        <input type="checkbox" name="resultfifth" value="blackout">
+                        <input type="checkbox" name="resultsixth" value="blackout">
                         停電
                     </label>
                     <label>
-                        <input type="checkbox" name="resultsixth" value="electricshock">
+                        <input type="checkbox" name="resultseventh" value="electricshock">
                         感電
                     </label>
                     <div id="sectionsecond">
                         <label>
-                            <input type="checkbox" name="resultseventh" value="collision">
+                            <input type="checkbox" name="resulteighth" value="collision">
                             衝突・接触
                         </label>
                         <label>
-                            <input type="checkbox" name="resulteighth" value="tumbling">
+                            <input type="checkbox" name="resultnineth" value="tumbling">
                             転落・転倒
                         </label>
                         <label>
-                            <input type="checkbox" name="resultnineth" value="flydrop">
+                            <input type="checkbox" name="resulttenth" value="flydrop">
                             飛来・落下
                         </label>
                         <label>
-                            <input type="checkbox" name="resulttenth" value="failure">
+                            <input type="checkbox" name="resulteleventh" value="failure">
                             誤作動
                         </label>
                     </div>
                     <div id="sectionthird">
                         <label>
-                            <input type="checkbox" name="resulteleventh" value="strike">
+                            <input type="checkbox" name="resulttwelveth" value="strike">
                             挟む・潰す・ぶつける
                         </label>
                         <label>
-                            <input type="checkbox" name="resulttwelveth" value="cut">
+                            <input type="checkbox" name="resultthirteenth" value="cut">
                             刺さる・切る
                         </label>
                     </div>
@@ -262,82 +266,82 @@
                 <th class="cause">原因</th>
                 <td class="causeselected">
                     <label>
-                        <input type="checkbox" name="cause" value="misoperation">
+                        <input type="checkbox" name="causefirst" value="misoperation">
                         誤操作・手順に反する
                     </label>
                     <label>
-                        <input type="checkbox" name="cause" value="indefinite">
+                        <input type="checkbox" name="causesecond" value="indefinite">
                         指示・命令・連絡・報告等不徹底
                     </label>
                     <label>
-                        <input type="checkbox" name="cause" value="preoccupied">
+                        <input type="checkbox" name="causethird" value="preoccupied">
                         他に気をとられる
                     </label>
                 <div id="sectionforth">
                     <label>
-                        <input type="checkbox" name="cause" value="experience">
+                        <input type="checkbox" name="causeforth" value="experience">
                         慣れによる
                     </label>
                     <label>
-                        <input type="checkbox" name="cause" value="impossiblemove">
+                        <input type="checkbox" name="causefifth" value="impossiblemove">
                         無理な動作
                     </label>
                     <label>
-                        <input type="checkbox" name="cause" value="lackconfirmation"> 
+                        <input type="checkbox" name="causesixth" value="lackconfirmation"> 
                         確認不足
                     </label>
                     <label>
-                        <input type="checkbox" name="cause" value="assumption"> 
+                        <input type="checkbox" name="causeseventh" value="assumption"> 
                         勝手な思い込み
                     </label>
                 </div>
                 <div id="sectionfifth">
                     <label>
-                        <input type="checkbox" name="cause" value="unconscious">
+                        <input type="checkbox" name="causeeighth" value="unconscious">
                         無意識・問題意識の欠如
                     </label>
                     <label>
-                        <input type="checkbox" name="cause" value="education"> 
+                        <input type="checkbox" name="causenineth" value="education"> 
                         教育・訓練
                     </label>
                     <label>
-                        <input type="checkbox" name="cause" value="manualu">
+                        <input type="checkbox" name="causetenth" value="manualu">
                         規程・マニュアル
                     </label>
                 </div>
                 <div id="sectionsixth">
                     <label>
-                        <input type="checkbox" name="cause" value="environment">
+                        <input type="checkbox" name="causeeleventh" value="environment">
                         労働条件・作業環境
                     </label>
                     <label>
-                        <input type="checkbox" name="cause" value="plan">
+                        <input type="checkbox" name="causetwelveth" value="plan">
                         作業計画
                     </label>
                     <label>
-                        <input type="checkbox" name="cause" value="physicalmental">
+                        <input type="checkbox" name="causethirteenth" value="physicalmental">
                         身体的状況 心理・精神的状況
                     </label>
                     <label>
-                        <input type="checkbox" name="cause" value="deterioration">
+                        <input type="checkbox" name="causefourteenth" value="deterioration">
                         劣化
                     </label>
                 </div>
                 <div id="sectionseventh">
                     <label>
-                        <input type="checkbox" name="cause" value="deficiency">
+                        <input type="checkbox" name="causefifteenth" value="deficiency">
                         配備・構造不備
                     </label>
                     <label>
-                        <input type="checkbox" name="cause" value="malfunction">
+                        <input type="checkbox" name="causesixteenth" value="malfunction">
                         動作不良
                     </label>
                     <label>
-                        <input type="checkbox" name="cause" value="Inspectionfailure">
+                        <input type="checkbox" name="causeseventeenth" value="Inspectionfailure">
                         整備・点検不良
                     </label>
                     <label>
-                        <input type="checkbox" name="cause" value="Poorconstruction">
+                        <input type="checkbox" name="causeeighteenth" value="Poorconstruction">
                         施工・製品不良
                     </label>
                 </div>
@@ -400,8 +404,8 @@
     <!--<input type="button" value="検索">-->
     <p>ヒヤリ・ハット一覧</p>
     <ul id="list"> 
-        <li class="item" data-dayweek="wednesday" data-human="kuin" data-situation="normal" data-age="amateur" data-place="station" data-resultfirst="accident" data-resultsecond="late" data-cause="" data-filter="情報伝達。確認" data-href="../count/hiyari_hatto/R03-201.pdf">車内点検依頼時、号車番号を伝えたはずが、聞き手側が列車番号だと誤認識</li>
-        <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="station" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-200.pdf">旅客案内時、業務用iPad接続不良</li>
+        <li class="item" data-occurrence="" data-dayweek="wednesday" data-human="kuin" data-situation="normal" data-age="amateur" data-place="station" data-resultfirst="accident" data-resultsecond="late" data-cause="" data-filter="情報伝達。確認" data-href="../count/hiyari_hatto/R03-201.pdf">車内点検依頼時、号車番号を伝えたはずが、聞き手側が列車番号だと誤認識</li>
+        <li class="item" data-occurrence="" data-dayweek="" data-human="" data-situation="" data-age="" data-place="station" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-200.pdf">旅客案内時、業務用iPad接続不良</li>
         <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="street" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-190.pdf">有明駅車庫にて、緊急自動車出庫時、走行中の車と接触しそうになった</li>
         <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="station" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-189.pdf">有明駅シャッター開前の構内巡回時に、小扉を開けられず、駅務室に戻れなくなる</li>
         <li class="item" data-dayweek="" data-human="" data-situation="" data-age="" data-place="station" data-result="" data-cause="" data-filter="" data-href="../count/hiyari_hatto/R03-177.pdf">新橋西口券売機売上金搬送中のキャリーカート誤扱い</li>

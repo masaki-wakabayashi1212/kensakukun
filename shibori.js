@@ -2,6 +2,21 @@ $(function() {
     // 初期表示
     $('.item').show();
 
+    $('.date').on('change', function() {
+      var datestart = $('[name="datestart"]').val();
+      var dateend = $('[name="dateend"]').val();
+
+      // liタグのdate-accident属性値が絞り込み範囲内であれば表示、それ以外は非表示にする
+      $('li[data-accident]').each(function() {
+        var date = $(this).attr('data-accident');
+        if (date >= datestart && date <= dateend) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+      });
+
     $("#input-text").on("input", function() {
       // 入力された値
       var filterText = $(this).val().trim().toLowerCase();
@@ -12,6 +27,7 @@ $(function() {
         return $(this).data("filter").toLowerCase().indexOf(filterText) > -1;
       }).show();
     });
+
   
     $('input[type="checkbox"]').change(function() {
       const color = [];
@@ -46,21 +62,22 @@ $(function() {
         const item_sizefirst = $(this).data('sizefirst');
         const item_sizesecond = $(this).data('sizesecond');
         const item_sizethird = $(this).data('sizethird');
+
         if ($.inArray(item_color, color) !== -1){ 
-          $(this).show();
-        }
+            $(this).show();
+          }
 
         if($.inArray(item_sizefirst, sizefirst) !== -1){
             $(this).show();
-        }
+          }
 
         if($.inArray(item_sizesecond, sizesecond) !== -1){
-          $(this).show();
-         }
+            $(this).show();
+          }
 
-      if($.inArray(item_sizethird, sizethird) !== -1){
-        $(this).show();
-        }
+        if($.inArray(item_sizethird, sizethird) !== -1){
+            $(this).show();
+          }
 
       });
     });
